@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="single-widget menu-widget">
+                    <!--div-- class="single-widget menu-widget">
                         <h3 class="widget-title">{!! __(menu_title(2)) !!} </h3>
                         <ul>
                             @foreach (quick_links_menu() as $quick_links_menu)
@@ -59,10 +59,10 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </div>
+                    </div-->
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-widget menu-widget">
+                    <!--div-- class="single-widget menu-widget">
                         <h3 class="widget-title">{!! __(menu_title(3)) !!}</h3>
                         <ul>
                             @foreach (support_help_menu() as $support_help_menu)
@@ -72,7 +72,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </div>
+                    </div-->
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-widget galley-widget">

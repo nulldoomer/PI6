@@ -56,6 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/appointment-delete/{appointment}', 'Front\AppointmentController@deleteappointment')->name('delete.appointment')->middleware('isDemo');
 	Route::post('/appointment-cancel/{appointment_id}', 'Front\AppointmentController@cancelAppointment')->name('cancel.appointment')->middleware('isDemo');
 
+    Route::post('/medicalhistory', 'Front\MedicalHistoryController@appointment')->name('medicalhistory')->middleware('isDemo');
+    Route::get('/medicalhistory-delete/{appointment}', 'Front\MedicalHistoryController@deleteappointment')->name('delete.medicalhistory')->middleware('isDemo');
+    Route::post('/medicalhistory-cancel/{appointment_id}', 'Front\MedicalHistoryController@cancelAppointment')->name('cancel.medicalhistory')->middleware('isDemo');
+
 	ROute::post('/userprofile/{user}', 'Front\UserProfileController@update')->name('user.profile')->middleware('isDemo');
 
 	Route::get('/patient-dashboard', 'Front\HomeController@index')->name('patient.dashboard');

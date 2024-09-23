@@ -5,10 +5,10 @@
     <section class="breadcrumb-area cus-bg-img"
         style="background-image: url({{ asset(path_page_banner() . $allsettings['banner']) }})">
         <div class="container">
-            <h2 class="page-title">{{ __('Patient Dashboard') }}</h2>
+            <h2 class="page-title">Dashboard del paciente</h2>
             <ul class="breadcrumb-page">
-                <li><a href="{{ route('front.index') }}">{{ __('Home') }}</a></li>
-                <li>{{ __('Dashboard') }}</li>
+                <li><a href="{{ route('front.index') }}">Inicio</a></li>
+                <li>Dashboard</li>
             </ul>
         </div>
     </section>
@@ -25,7 +25,7 @@
                                         <a class="nav-link {{ isset($tab) && $tab == 'dashboard' ? 'active' : '' }}"
                                             id="tabone-tab" data-toggle="tab" href="#tabone" role="tab"
                                             aria-controls="tabone" aria-selected="true">
-                                            <i class="fas fa-home"></i> <span>{{ __('Dashboard') }}</span>
+                                            <i class="fas fa-home"></i> <span>Inicio</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -33,7 +33,7 @@
                                             id="tabfive-tab" data-toggle="tab" href="#tabfive" role="tab"
                                             aria-controls="tabfive" aria-selected="true">
                                             <i class="fas fa-calendar-check"></i>
-                                            <span>{{ __('Today Appointments') }}</span>
+                                            <span>Citas para hoy</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -41,21 +41,21 @@
                                             id="tabtwo-tab" data-toggle="tab" href="#tabtwo" role="tab"
                                             aria-controls="tabtwo" aria-selected="false">
                                             <i class="fas fa-calendar-check"></i> <span>
-                                                {{ __('All Appointment') }}</span>
+                                                Todas las citas</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link {{ isset($tab) && $tab == 'create-appointment' ? 'active' : '' }}"
                                             id="tabthree-tab" data-toggle="tab" href="#tabthree" role="tab"
                                             aria-controls="tabthree" aria-selected="false">
-                                            <i class="fas fa-calendar-plus"></i><span>{{ __('Create Appointment') }}</span>
+                                            <i class="fas fa-calendar-plus"></i><span>Crear Cita</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link {{ isset($tab) && $tab == 'profile' ? 'active' : '' }}"
                                             id="tabfour-tab" data-toggle="tab" href="#tabfour" role="tab"
                                             aria-controls="tabfour" aria-selected="false">
-                                            <i class="fas fa-user"></i><span>{{ __('Profile') }}</span>
+                                            <i class="fas fa-user"></i><span>Perfil</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -74,7 +74,7 @@
             </div>
             @if (Session::has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>{{ __('Congratulation!') }}</strong> {{ Session::get('success') }}
+                    <strong>Felicitaciones</strong> {{ Session::get('success') }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -108,7 +108,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-1.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Past Appointment') }}</h4>
+                                                <h4 class="counter-title mt-0">Citas Anteriores</h4>
                                                 <h2 class="counter">{{ past_appointment_count() }}</h2>
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-2.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Ongoing Appointment') }}</h4>
+                                                <h4 class="counter-title mt-0">Citas Programadas</h4>
                                                 <h2 class="counter color-two">{{ patient_ongoing_count() }}</h2>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-3.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Total Cost') }}</h4>
+                                                <h4 class="counter-title mt-0">Costo Total</h4>
                                                 <h2 class="counter color-three">
                                                     {{ auth()->user()->earning->pluck('earning')->sum() }}</h2>
                                             </div>
@@ -142,21 +142,21 @@
                             </div>
                         </div>
                         <div class="section-heading-area">
-                            <h2 class="section-title">{{ __('Past Appointment') }} </h2>
+                            <h2 class="section-title">Citas Pasadas</h2>
                         </div>
                         <div class="primary-table">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">{{ __('Doctor Name') }}</th>
-                                            <th scope="col">{{ __('Date') }}</th>
-                                            <th scope="col">{{ __('Time') }}</th>
-                                            <th scope="col">{{ __('Type') }}</th>
-                                            <th scope="col">{{ __('Status') }}</th>
-                                            <th scope="col">{{ __('Prescription') }}</th>
-                                            <th scope="col">{{ __('Meeting') }}</th>
-                                            <th scope="col">{{ __('Action') }}</th>
+                                            <th scope="col">Psicólogo</th>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Hora</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Indicaciones</th>
+                                            <th scope="col">Meeting</th>
+                                            <th scope="col">Acción</th>
                                         </tr>
                                     </thead>
                                     <tbody id="dashboardpagi" class="accordion">
@@ -171,7 +171,7 @@
                         <div class="section-heading-area">
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <h2 class="section-title">{{ __('Today Appointments') }}</h2>
+                                    <h2 class="section-title">Citas de Hoy</h2>
                                 </div>
                                 <div class="col-md-6 text-md-right">
                                 </div>
@@ -185,14 +185,14 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">{{ __('Doctor Name') }}</th>
-                                                    <th scope="col">{{ __('Date') }}</th>
-                                                    <th scope="col">{{ __('Time') }}</th>
-                                                    <th scope="col">{{ __('Type') }}</th>
-                                                    <th scope="col">{{ __('Status') }}</th>
-                                                    <th scope="col">{{ __('Prescription') }}</th>
-                                                    <th scope="col">{{ __('Meeting Link') }}</th>
-                                                    <th scope="col">{{ __('Action') }}</th>
+                                                    <th scope="col">Psicólogo</th>
+                                                    <th scope="col">Fecha</th>
+                                                    <th scope="col">Hora</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Estado</th>
+                                                    <th scope="col">Indicaciones</th>
+                                                    <th scope="col">Meeting</th>
+                                                    <th scope="col">Acción</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="searchbodytoday">
@@ -208,7 +208,7 @@
                         <div class="section-inner-header section-heading-area">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h2 class="section-title">{{ __('All Appointment') }}</h2>
+                                    <h2 class="section-title">Todas las Citas</h2>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="inner-header-right">
@@ -218,12 +218,12 @@
                                                     <div class="search-input">
                                                         <input type="text" class="form-control"
                                                             name="appoinmentsearch" id="appoinmentsearch"
-                                                            placeholder="{{ __('Search with Doctor') }}" />
+                                                            placeholder="Buscar con el psicólogo" />
                                                         <button class="search-btn"><i class="fas fa-search"></i></button>
                                                     </div>
                                                     <div class="date-input">
                                                         <input type="text" class="form-control" name="appoinmentdate"
-                                                            id="appoinmentdate" placeholder="{{ __('Search Date') }}" />
+                                                            id="appoinmentdate" placeholder="Buscar Fecha" />
                                                         <span class="form-icon"><i class="far fa-calendar-alt"></i></span>
                                                     </div>
                                                 </div>
@@ -242,14 +242,14 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">{{ __('Doctor Name') }}</th>
-                                                    <th scope="col">{{ __('Date') }}</th>
-                                                    <th scope="col">{{ __('Time') }}</th>
-                                                    <th scope="col">{{ __('Type') }}</th>
-                                                    <th scope="col">{{ __('Status') }}</th>
-                                                    <th scope="col">{{ __('Prescription') }}</th>
-                                                    <th scope="col">{{ __('Meeting Link') }}</th>
-                                                    <th scope="col">{{ __('Action') }}</th>
+                                                    <th scope="col">Psicólogo</th>
+                                                    <th scope="col">Fecha</th>
+                                                    <th scope="col">Hora</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Estado</th>
+                                                    <th scope="col">Indicaciones</th>
+                                                    <th scope="col">Meeting</th>
+                                                    <th scope="col">Acción</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="searchbodytoday">
@@ -267,14 +267,14 @@
                                         <table class="table" id="todaypagination">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">{{ __('Doctor Name') }}</th>
-                                                    <th scope="col">{{ __('Date') }}</th>
-                                                    <th scope="col">{{ __('Time') }}</th>
-                                                    <th scope="col">{{ __('Type') }}</th>
-                                                    <th scope="col">{{ __('Status') }}</th>
-                                                    <th scope="col">{{ __('Prescription') }}</th>
-                                                    <th scope="col">{{ __('Meeting Link') }}</th>
-                                                    <th scope="col">{{ __('Action') }}</th>
+                                                    <th scope="col">Psicólogo</th>
+                                                    <th scope="col">Fecha</th>
+                                                    <th scope="col">Hora</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Estado</th>
+                                                    <th scope="col">Indicaciones</th>
+                                                    <th scope="col">Meeting</th>
+                                                    <th scope="col">Acción</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="searchbody">
@@ -306,12 +306,12 @@
                                 <input type="hidden" id="appinput" value="" name="appinput">
                                 <span data-id="{{ route('patient.set_payment_type') }}" id="payment_type_route"></span>
                                 <div class="tab">
-                                    <h4 class="form-inner-title">{{ __('Date & Time') }}</h4>
+                                    <h4 class="form-inner-title">Fecha y hora</h4>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="date" name="appdate" class="form-control" id="date"
-                                                    min="{{ date('Y-m-d') }}" placeholder="{{ __('Select Date') }}"
+                                                    min="{{ date('Y-m-d') }}" placeholder="Seleccione Fecha"
                                                     required />
                                                 <span class="form-icon"><i class="far fa-calendar-alt"></i></span>
                                             </div>
@@ -320,7 +320,7 @@
                                             <div class="form-group" id="apptime-select">
                                                 <i class="fas fa-chevron-down"></i>
                                                 <select name="apptime" id="apptime" class="form-control" required>
-                                                    <option value="">{{ __('Select time slot') }}</option>
+                                                    <option value="">Seleccione un horario</option>
                                                     @foreach ($docslots as $docslot)
                                                         <option value="{{ $docslot->id }}"
                                                             data-time="{{ $docslot->start_time }}-{{ $docslot->end_time }}">
@@ -331,7 +331,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h4 class="form-inner-title">{{ __('Category') }} </h4>
+                                    <h4 class="form-inner-title">Especialidad</h4>
                                     <div class="dectors-service-list">
                                         @foreach ($doctorCategory as $category)
                                             <div class="form-check">
@@ -344,7 +344,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    <h4 class="form-inner-title">{{ __('Appointment Type') }} </h4>
+                                    <h4 class="form-inner-title">Tipo de cita </h4>
                                     <div class="dectors-service-list">
                                         <div class="form-check">
                                             <input class="form-check-input payment_type" type="radio"
@@ -357,29 +357,29 @@
                                             <input class="form-check-input payment_type" type="radio"
                                                 name="payment_type" id="offline" value="offline">
                                             <label class="form-check-label" for="offline">
-                                                {{ __('Offline') }}
+                                                Presencial
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3 class="form-title">{{ __('Choose Doctor') }}</h3>
+                                    <h3 class="form-title">Seleccione al Psicólogo</h3>
                                     <div class="row doctorajax">
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3 class="form-title">{{ __('Check Information Place Comment') }}</h3>
+                                    <h3 class="form-title">Revise la información</h3>
                                     <h4 class="form-inner-title" id="formInnerTitle"></h4>
                                     <div class="appoinment-table mb-30">
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td>{{ __('Appointment Date') }}</td>
-                                                        <td>{{ __('Appointment Time') }}</td>
-                                                        <td>{{ __('Appointment Day') }}</td>
-                                                        <td>{{ __('Consultancy Fee') }} </td>
-                                                        <td>{{ __('Services') }}</td>
+                                                        <td>Fecha de cita</td>
+                                                        <td>Hora de cita</td>
+                                                        <td>Día</td>
+                                                        <td>Tarifa</td>
+                                                        <td>Servicios</td>
                                                     </tr>
                                                     <tr>
                                                         <td id="app_date"></td>
@@ -393,13 +393,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Comment">{{ __('Brief Your Problems') }}</label>
+                                        <label for="Comment">Comentarios adicionales</label>
                                         <textarea name="comment" class="form-control comment-box" id="Comment" rows="3"
-                                            placeholder="{{ __('Comment') }}" required></textarea>
+                                            placeholder="Comentarios" required></textarea>
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3 class="form-title">{{ __('Select Payment Method') }}</h3>
+                                    <h3 class="form-title">Método de pago</h3>
                                     <div class="row mt-3">
                                         <div class="col">
                                             <div class="form-group" id="toggler">
@@ -409,8 +409,8 @@
                                 </div>
                                 <div class="form-btn">
                                     <button type="button" class="previsousbtn"
-                                        id="prevBtn">{{ __('Previous') }}</button>
-                                    <button type="button" id="nextBtn">{{ __('Next') }}</button>
+                                        id="prevBtn">Anterior</button>
+                                    <button type="button" id="nextBtn">Siguiente</button>
                                 </div>
                             </form>
                         </div>
@@ -418,7 +418,7 @@
                     <div class="tab-pane fade {{ isset($tab) && $tab == 'profile' ? 'show active' : '' }}"
                         id="tabfour" role="tabpanel" aria-labelledby="tabfour-tab">
                         <div class="section-heading-area">
-                            <h2 class="section-title">{{ __('Profile') }}</h2>
+                            <h2 class="section-title">Perfil</h2>
                         </div>
                         <div class="profile-area">
                             <div class="profile-bottom">
@@ -438,7 +438,7 @@
                                                             {{ Auth::user()->age }} {{ __('Years') }}</h4>
                                                         <button class="profile-btn" type="button" data-toggle="modal"
                                                             data-target="#editeprofilemodal"><i class="far fa-edit"></i>
-                                                            {{ __('Edit Info') }}</button>
+                                                            Editar Información</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -447,11 +447,11 @@
                                                     <div class="secondary-form">
                                                         <form>
                                                             <h3 class="form-title">
-                                                                {{ __('Basic Information') }}</h3>
+                                                                Información Básica</h3>
                                                             <div class="row">
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('Email') }}</label>
+                                                                        <label>Email</label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ Auth::user()->email }}"
                                                                             readonly />
@@ -461,7 +461,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('Gender') }}</label>
+                                                                        <label>Género</label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ Auth::user()->gender }}"
                                                                             readonly />
@@ -469,7 +469,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('BirthDay') }}</label>
+                                                                        <label>Cumpleaños</label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ date('d M Y', strtotime(Auth::user()->dob)) }}"
                                                                             readonly />
@@ -477,11 +477,11 @@
                                                                 </div>
                                                             </div>
                                                             <h3 class="form-title mt-20">
-                                                                {{ __('Address Information') }}</h3>
+                                                                Dirección</h3>
                                                             <div class="row">
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('Street Address') }}</label>
+                                                                        <label>Calle/label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ Auth::user()->address }}"
                                                                             readonly />
@@ -489,7 +489,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('City') }}</label>
+                                                                        <label>Ciudad</label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ Auth::user()->city }}"
                                                                             readonly />
@@ -497,7 +497,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4 col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('Zip Code') }}</label>
+                                                                        <label>Código Postal</label>
                                                                         <input type="text" class="form-control"
                                                                             placeholder="{{ Auth::user()->code }}"
                                                                             readonly />
@@ -556,7 +556,7 @@
                                         <input type="file" id="file-input" name="image" class="form-control-file">
                                     </div>
                                 </div>
-                                <h4 class="form-inner-title">{{ __('Select Service & Date') }}</h4>
+                                <h4 class="form-inner-title">Seleccione Servicio y Fecha</h4>
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
                                         <div class="form-group">
@@ -565,7 +565,7 @@
                                                 placeholder="{{ isset(Auth::user()->name) ? Auth::user()->name : __('Enter your name') }}"
                                                 required />
                                             <small
-                                                class="text-danger d-none nameerror">{{ __('Name field is required') }}</small>
+                                                class="text-danger d-none nameerror">Nombre es requerido</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -574,7 +574,7 @@
                                                 value="{{ Auth::user()->email }}"
                                                 placeholder="{{ isset(Auth::user()->email) ? Auth::user()->email : __('Enter your email') }}" />
                                             <small
-                                                class=" text-danger d-none emailerror">{{ __('Email field is required') }}</small>
+                                                class=" text-danger d-none emailerror">Email es requerido</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -592,7 +592,7 @@
                                                 value="{{ Auth::user()->age }}"
                                                 placeholder="{{ isset(Auth::user()->age) ? Auth::user()->age : __('Enter your age') }}" />
                                             <small
-                                                class=" text-danger d-none ageerror">{{ __('Age field is required') }}</small>
+                                                class=" text-danger d-none ageerror">Edad es requerido</small>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -606,7 +606,7 @@
                                                     @endif
                                                 >
                                                 <label class="form-check-label" for="male">
-                                                    {{ __('Male') }}
+                                                    Masculino
                                                 </label>
                                             </div>
                                             <div class="form-check">
@@ -616,7 +616,7 @@
                                             checked @endif
                                                     @endif>
                                                 <label class="form-check-label" for="famale">
-                                                    {{ __('Female') }}
+                                                    Femenino
                                                 </label>
                                             </div>
                                         </div>
@@ -652,7 +652,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="primary-btn changesave" type="submit">{{ __('Changes Save') }}</button>
+                                <button class="primary-btn changesave" type="submit">Guardar Cambios</button>
                             </form>
                         </div>
                     </div>

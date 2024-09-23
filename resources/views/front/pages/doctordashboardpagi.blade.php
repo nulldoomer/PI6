@@ -92,6 +92,48 @@
                             <div class="show-details-content-item">
                                 {{ __('Comment:') }}<span>{{ $apps->comment }}</span>
                             </div>
+                            <div>
+                                <form-- action="{{ route('stuff.create_appointment') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="doctor_id"
+                                           value="">
+                                    <input type="hidden" name="doctorsService"
+                                           value="">
+                                    <input type="hidden" name="fees"
+                                           value="">
+                                    <div class="form-group mb-0">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="input-group">
+                                                    <i class="far fa-user"></i>
+                                                    <input type="text" class="form-control"
+                                                           name="fname"
+                                                           placeholder="Historia">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group mb-0">
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <div class=" mb-0 position-relative">
+                                                                    <textarea name="comment" class="stuff-create-appointment-" cols="30" rows="10"
+                                                                              placeholder="{{ __('Write something') }}"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit"
+                                                    class="btn btn-primary">{{ __('Create Appointment') }}</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>

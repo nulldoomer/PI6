@@ -552,6 +552,7 @@
     'About_Section_Edit' => 'Editar Sección Sobre Nosotros',
     'User_Image' => 'Imagen del Usuario',
     'Menu_label' => 'Etiqueta del Menú',
-    'Appointment_List' => 'Lista de Citas',
+    'Appointment_List' => 'Citas',
+    'MedicalHistory_List' => 'Historias Clínicas',
     'Show/hide' => 'Mostrar',
 ];

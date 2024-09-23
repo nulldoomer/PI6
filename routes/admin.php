@@ -89,6 +89,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/appointment/details/{id}', 'Appointment\AppointmentController@details')->name('appointment.details');
     Route::get('/appointment/approve/{id}', 'Appointment\AppointmentController@app_approve')->name('appointment.approve')->middleware('isDemo');
 
+    Route::get('/medicalhistory', 'MedicalHistory\MedicalHistoryController@index')->name('medicalhistory.index');
+    //Route::get('/payment-to-doctor/{appointment_id}', 'Appointment\AppointmentController@paymentToDoctor')->name('appointment.payment-to-doctor');
+    Route::get('/medicalhistory/{medialhostory}/delete', 'MedicalHistory\MedicalHistoryController@delete')->name('medicalhistory.delete')->middleware('isDemo');
+    Route::get('/medicalhistory/details/{id}', 'MedicalHistory\MedicalHistoryController@details')->name('medicalhistory.details');
+    Route::get('/medicalhistory/approve/{id}', 'MedicalHistory\MedicalHistoryController@app_approve')->name('medicalhistory.approve')->middleware('isDemo');
+
     Route::get('/patient', 'Patient\PatientController@index')->name('patient.index');
     Route::get('/patient/create', 'Patient\PatientController@create')->name('patient.create');
     Route::post('/patient/store', 'Patient\PatientController@store')->name('patient.store')->middleware('isDemo');

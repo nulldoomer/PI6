@@ -43,33 +43,33 @@
                     <div
                         class="nav-item {{ Route::is('doctor.index') || Route::is('doctor.create') || Route::is('doctor.show') ? 'active' : '' }}">
                         <a href="{{ route('doctor.index') }}"><i
-                                class="fa fa-user-md"></i><span>{{ __('main.Doctor') }}</span></a>
+                                class="fa fa-user-md"></i><span>Psícólogos</span></a>
                     </div>
                 @endcan
                 @can('category-list')
                     <div
                         class="nav-item {{ Route::is('doctor.category.index') || Route::is('doctor.category.*') ? 'active' : '' }}">
                         <a href="{{ route('doctor.category.index') }}"><i
-                                class="fa fa-bug"></i><span>{{ __('main.Doctor_Category') }}</span></a>
+                                class="fa fa-bug"></i><span>Especialidades</span></a>
                     </div>
                 @endcan
                 @can('slot-list')
                     <div class="nav-item {{ Route::is('slot.index') ? 'active' : '' }}">
                         <a href="{{ route('slot.index') }}"><i
-                                class="far fa-calendar"></i><span>{{ __('main.Doctor_Slot') }}</span></a>
+                                class="far fa-calendar"></i><span>Horarios</span></a>
                     </div>
                 @endcan
                 @can('slot-create')
                     <div class="nav-item {{ Route::is('slot.add') ? 'active' : '' }}">
                         <a href="{{ route('slot.add') }}"><i
-                                class="far fa-calendar-times"></i><span>{{ __('main.Doctor_Slot_Add') }}</span></a>
+                                class="far fa-calendar-times"></i><span>Asignación de horarios</span></a>
                     </div>
                 @endcan
                 @can('patient-list')
                     <div
                         class="nav-item {{ Route::is('patient.index') || Route::is('patient.create') || Route::is('patient.show') ? 'active' : '' }}">
                         <a href="{{ route('patient.index') }}"><i
-                                class="fa fa-bug"></i><span>{{ __('main.Patient') }}</span></a>
+                                class="fa fa-bug"></i><span>Pacientes</span></a>
                     </div>
                 @endcan
 
@@ -78,7 +78,7 @@
                         <a href="#"><i class="fa fa-calendar-check"></i><span>{{ __('main.Appointment') }}</span></a>
                         <div class="submenu-content">
                             <a href="{{ route('appointment.index') }}"
-                                class="menu-item {{ Route::is('appointment.index') ? 'active' : '' }}">{{ __('main.Appointment_List') }}</a>
+                                class="menu-item {{ Route::is('appointment.index') ? 'active' : '' }}">Citas</a>
 
                             <a href="{{ route('appointment.index', 'paymentType=bank') }}"
                                 class="menu-item">{{ __('main.Appointment_Request') }}</a>
@@ -87,15 +87,29 @@
                     </div>
                 @endcan
 
+                @can('medicalhistory-list')
+                    <div class="nav-item has-sub {{ Route::is('medicalhistory.index') ? 'active open' : '' }}">
+                        <a href="#"><i class="fa fa-calendar-check"></i><span>Historias Clínicas</span></a>
+                        <div class="submenu-content">
+                            <a href="{{ route('medicalhistory.index') }}"
+                               class="menu-item {{ Route::is('medicalhistory.index') ? 'active' : '' }}">Historias Clínicas</a>
+
+                            <!--a-- href="{{ route('medicalhistory.index', 'paymentType=bank') }}"
+                               class="menu-item">{{ __('main.MedicalHistory_List') }}</a-->
+
+                        </div>
+                    </div>
+                @endcan
+
                 @can('earning-list')
-                    <div class="nav-item {{ Route::is('earnings.index') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('earnings.index') ? 'active' : '' }}">
                         <a href="{{ route('earnings.index') }}"><i
                                 class="fa fa-money-bill"></i><span>{{ __('main.Earnings') }}</span></a>
-                    </div>
-                    <div class="nav-item {{ Route::is('spotpayment.index') ? 'active' : '' }}">
+                    </div-->
+                    <!--div-- class="nav-item {{ Route::is('spotpayment.index') ? 'active' : '' }}">
                         <a href="{{ route('spotpayment.index') }}"><i
                                 class="fa fa-dollar-sign"></i><span>{{ __('main.Spot_Payment') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 {{-- @can('currency-list')
                     <div class="nav-item {{ Route::is('currency.index') ? 'active' : '' }}">
@@ -106,10 +120,9 @@
                 <!-- News -->
                 @if (auth()->user()->can('news-list') ||
                     auth()->user()->can('news-category-list'))
-                    <div class="nav-item has-sub {{ Route::is('news.*', 'category.*') ? 'active open' : '' }}">
+                    <!--div class="nav-item has-sub {{ Route::is('news.*', 'category.*') ? 'active open' : '' }}">
                         <a href="#"><i class="ik ik-file-text"></i><span>{{ __('main.News') }}</span></a>
                         <div class="submenu-content">
-                            <!-- only those have manage_user permission will get access -->
                             @can('news-list')
                                 <a href="{{ route('news.index') }}"
                                     class="menu-item {{ Route::is('news.index') ? 'active' : '' }}">{{ __('main.News') }}</a>
@@ -127,110 +140,108 @@
                                     class="menu-item {{ Route::is('category.create') ? 'active' : '' }}">{{ __('main.Add_Category') }}</a>
                             @endcan
                         </div>
-                    </div>
+                    </div-->
                 @endif
                 <!-- Appearance -->
-                <div class="nav-item has-sub {{ Route::is('menu.*') ? 'active open' : '' }}">
+                <!--div-- class="nav-item has-sub {{ Route::is('menu.*') ? 'active open' : '' }}">
                     <a href="#"><i class="ik ik-edit"></i><span>{{ __('main.Appearance') }}</span></a>
                     <div class="submenu-content">
-                        <!-- only those have manage_user permission will get access -->
                         @can('menu-list')
                             <a href="{{ route('menu.index') }}"
                                 class="menu-item {{ Route::is('menu.*') ? 'active' : '' }}">{{ __('main.Menu') }}</a>
                         @endcan
                     </div>
-                </div>
+                </div-->
                 <!-- Comment -->
                 @can('comment-list')
-                    <div class="nav-item {{ Route::is('comment.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('comment.*') ? 'active' : '' }}">
                         <a href="{{ route('comment.index') }}"><i
                                 class="ik ik-edit-1"></i><span>{{ __('main.Comment') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Comment -->
                 @can('social-list')
-                    <div class="nav-item {{ Route::is('site.social.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('site.social.*') ? 'active' : '' }}">
                         <a href="{{ route('site.social.index') }}"><i
                                 class="fab fa-facebook-square"></i><span>{{ __('main.Social_Media') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Service -->
                 @can('service-list')
-                    <div class="nav-item {{ Route::is('service.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('service.*') ? 'active' : '' }}">
                         <a href="{{ route('service.index') }}"><i
                                 class="ik ik-sliders"></i><span>{{ __('main.Service') }}</span></a>
-                    </div>
+                    </--div-->
                 @endcan
                 <!-- gallery -->
                 @can('gallery-list')
-                    <div class="nav-item {{ Route::is('gallery.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('gallery.*') ? 'active' : '' }}">
                         <a href="{{ route('gallery.index') }}"><i
                                 class="ik ik-image"></i><span>{{ __('main.Gallery') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Pages -->
                 @can('page-list')
-                    <div class="nav-item {{ Route::is('page.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('page.*') ? 'active' : '' }}">
                         <a href="{{ route('page.index') }}"><i
                                 class="ik ik-file-text"></i><span>{{ __('main.Pages') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Contact -->
                 @can('contact-list')
-                    <div class="nav-item {{ Route::is('contact.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('contact.*') ? 'active' : '' }}">
                         <a href="{{ route('contact.index') }}"><i
                                 class="ik ik-mail"></i><span>{{ __('main.Contact') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Site -->
                 @can('language-list')
-                    <div class="nav-item {{ Route::is('language.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('language.*') ? 'active' : '' }}">
                         <a href="{{ route('language.index') }}"><i
                                 class="fas fa-language"></i><span>{{ __('main.Languages') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Site -->
                 @can('site-setting')
-                    <div class="nav-item {{ Route::is('sites.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('sites.*') ? 'active' : '' }}">
                         <a href="{{ route('sites.create') }}"><i
                                 class="fas fa-cogs"></i><span>{{ __('main.Site_Settings') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Smtp settings -->
                 @can('smtp-setting')
-                    <div class="nav-item {{ Route::is('smtp.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('smtp.*') ? 'active' : '' }}">
                         <a href="{{ route('smtp.index') }}"><i
                                 class="fas fa-cog"></i><span>{{ __('main.SMTP_Settings') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- zoom settings -->
                 @can('zoom-setting')
-                    <div class="nav-item {{ Route::is('zoom.setting.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('zoom.setting.*') ? 'active' : '' }}">
                         <a href="{{ route('zoom.setting.index') }}">
                             <i class="fas fa-search"></i>
                             <span>{{ __('main.Zoom_Settings') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- payment settings -->
                 @can('payment-method')
-                    <div class="nav-item {{ Route::is('paymentmethod.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('paymentmethod.*') ? 'active' : '' }}">
                         <a href="{{ route('paymentmethod.index') }}"><i
                                 class="fas fa-credit-card"></i><span>{{ __('main.Payment_Method_Settings') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Subscribers -->
                 @can('subscriber')
-                    <div class="nav-item {{ Route::is('subscribers.*') ? 'active' : '' }}">
+                    <!--div-- class="nav-item {{ Route::is('subscribers.*') ? 'active' : '' }}">
                         <a href="{{ route('subscribers.index') }}"><i
                                 class="fas fa-users-cog"></i><span>{{ __('main.Subscribers') }}</span></a>
-                    </div>
+                    </div-->
                 @endcan
                 <!-- Sections -->
-                <div
+                <!--div--
                     class="nav-item has-sub {{ Route::is('slider.*', 'faq.*', 'notice.*', 'about.*', 'counter.*', 'gallery_section.*', 'doctor.section', 'testimonial.*', 'brand.*') ? 'active open' : '' }}">
                     <a href="#"><i class="ik ik-layers"></i><span>{{ __('main.Sections') }}</span></a>
                     <div class="submenu-content">
-                        <!-- only those have manage_user permission will get access -->
                         @can('slider-list')
                             <a href="{{ route('slider.index') }}"
                                 class="menu-item {{ Route::is('slider.*') ? 'active' : '' }}">{{ __('main.Slider') }}</a>
@@ -269,7 +280,7 @@
                         @endcan
 
                     </div>
-                </div>
+                </div-->
             </nav>
         </div>
     </div>

@@ -14,48 +14,48 @@
         <td>
             @if (Carbon\Carbon::parse($apps->appdate) < Carbon\Carbon::today() && $apps->status == 0)
                 <span class="text-danger">
-                    {{ __('main.Cancelled') }}
+                    Cancelada
                 </span>
             @endif
             @if (Carbon\Carbon::parse($apps->appdate) < Carbon\Carbon::today() && $apps->status == 1)
                 <span class="text-danger">
-                    {{ __('main.Cancelled') }}
+                    Cancelada
                 </span>
             @endif
             @if ($apps->status == 2)
                 <span class="completed">
-                    {{ __('main.Completed') }}
+                    Completada
                 </span>
             @endif
             @if ($apps->status == 3)
                 <span class="text-danger">
-                    {{ __('main.Cancelled') }}
+                    Completada
                 </span>
             @endif
         </td>
         <td>
             @if (Carbon\Carbon::parse($apps->appdate) < Carbon\Carbon::today() && $apps->status == 0)
                 <a class="common-tbl-btn disabled-btn" href="javascript:void(0)" data-toggle="popover"
-                    title="{{ __('main.No_Prescription') }}"
-                    data-content="{{ __('main.Prescription_Not_Available!') }}"
-                    role="button">{{ __('main.No_Prescription') }}</a>
+                    title="No hay indicaciones"
+                    data-content="No hay indicaciones"
+                    role="button">No hay indicaciones</a>
             @endif
             @if (Carbon\Carbon::parse($apps->appdate) < Carbon\Carbon::today() && $apps->status == 1)
                 <a class="common-tbl-btn disabled-btn" href="javascript:void(0)" data-toggle="popover"
-                    title="{{ __('main.No_Prescription') }}"
-                    data-content="{{ __('main.Prescription_Not_Available!') }}"
-                    role="button">{{ __('main.No Prescription') }}</a>
+                   title="No hay indicaciones"
+                   data-content="No hay indicaciones"
+                   role="button">No hay indicaciones</a>
             @endif
             @if ($apps->status == 3)
                 <a class="common-tbl-btn disabled-btn" href="javascript:void(0)" data-toggle="popover"
-                    title="{{ __('main.No Prescription') }}"
-                    data-content="{{ __('main.Prescription_Not_Available!') }}"
-                    role="button">{{ __('main.No Prescription') }}</a>
+                   title="No hay indicaciones"
+                   data-content="No hay indicaciones"
+                   role="button">No hay indicaciones</a>
             @endif
             @if ($apps->status == 2)
                 <a class="common-tbl-btn view-button " href="#" role="button"
-                    title="{{ __('main.View_Prescription') }}" data-toggle="modal"
-                    data-target="#ViewPrescription{{ $apps->id }}">{{ __('main.View_Prescription') }}</a>
+                    title="Ver indicaciones" data-toggle="modal"
+                    data-target="#ViewPrescription{{ $apps->id }}">Ver indicaciones</a>
             @endif
         </td>
         <td>
@@ -63,16 +63,16 @@
                 @if (Carbon\Carbon::parse($apps->appdate) == Carbon\Carbon::today() && $apps->status == 1 && $apps->type != OFFLINE)
                     @if (hasMeeting($apps->id) == 1)
                         <a class="common-tbl-btn view-button" role="button" data-toggle="modal"
-                            title="{{ __('main.View') }}"
-                            data-target="#viewMeetingModal{{ $apps->id }}">{{ __('main.View') }}</a>
+                            title="Ver"
+                            data-target="#viewMeetingModal{{ $apps->id }}">Ver</a>
                     @else
                         <a class="common-tbl-btn create-button" role="button" data-toggle="modal"
-                            title="{{ __('main.Create') }}"
-                            data-target="#createMeetingModal{{ $apps->id }}">{{ __('main.Create') }}</a>
+                            title="Crear"
+                            data-target="#createMeetingModal{{ $apps->id }}">Crear</a>
                     @endif
                 @else
                     <a class="common-tbl-btn disabled-btn" href="javascript:void(0)"
-                        role="button">{{ __('main.No Link') }}</a>
+                        role="button">No hay enlace</a>
                 @endif
             </div>
         </td>
@@ -94,39 +94,39 @@
                 <div class="card-body d-flex">
                     <div>
                         <div class="show-details-content-item">
-                            {{ __('main.Patient:') }}<span>{{ isset($apps->patient->name) ? $apps->patient->name : '' }}</span>
+                            Paciente<span>{{ isset($apps->patient->name) ? $apps->patient->name : '' }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Appointment Date:') }}<span>{{ $apps->appdate }}</span>
+                            Fecha<span>{{ $apps->appdate }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Appointment_Time:') }}<span>{{ $apps->slot ? Carbon\Carbon::parse($apps->slot->start_time)->format('H:i A') : 'N/A' }}-{{ $apps->slot ? Carbon\Carbon::parse($apps->slot->end_time)->format('H:i A') : 'N/A' }}</span>
+                            Hora<span>{{ $apps->slot ? Carbon\Carbon::parse($apps->slot->start_time)->format('H:i A') : 'N/A' }}-{{ $apps->slot ? Carbon\Carbon::parse($apps->slot->end_time)->format('H:i A') : 'N/A' }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Appointment_Type:') }}<span>{{ $apps->type == OFFLINE ? __('main.Offline') : __('main.Online') }}</span>
+                            Tipo<span>{{ $apps->type == OFFLINE ? __('main.Offline') : __('main.Online') }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Payment_Method:') }}<span>{{ $apps->paymentmethod == 'cod' ? 'Spot Payment' : ucfirst($apps->paymentmethod) }}</span>
+                            Método de pago<span>{{ $apps->paymentmethod == 'cod' ? 'Spot Payment' : ucfirst($apps->paymentmethod) }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Payment_Status:') }}<span
+                            Estado del pago<span
                                 class="{{ $apps->is_paid == '1' ? 'text-success' : 'text-danger' }}">{{ $apps->is_paid == '1' ? 'Paid' : 'Unpaid' }}</span>
                         </div>
                         <div class="show-details-content-item">
-                            {{ __('main.Fees:') }}<span>{{ $apps->fees }}&#36;</span>
+                            Cargos<span>{{ $apps->fees }}&#36;</span>
                         </div>
                         @if ($apps->type != OFFLINE)
                             @if (hasMeeting($apps->id) == 1)
                                 <div class="show-details-content-item">
                                     {{ __('main.Join_URL:') }} <span><a href="{{ $apps->meeting->join_url }}"
                                             title="Join Meeting"
-                                            target="_blank">{{ __('Goto Link') }}</a></span>
+                                            target="_blank">Ir al enlace</a></span>
                                 </div>
                                 <div class="show-details-content-item">
                                     {{ __('Meeting ID:') }} <span>{{ $apps->meeting->meeting_id }}</span>
                                 </div>
                                 <div class="show-details-content-item">
-                                    {{ __('main.Meeting Password:') }} <span>{{ $apps->meeting->password }}</span>
+                                    Número de reunión <span>{{ $apps->meeting->password }}</span>
                                 </div>
                             @else
                                 <div class="show-details-content-item">{{ __('Meeting_not_available!') }}</div>
@@ -146,9 +146,8 @@
             <div class='no-appoint-bg'>
                 <img class="img-fluid" src="{{ asset('uploaded_file/no-data-patient.svg') }}"
                     alt="{{ __('image') }}">
-                <h2 class='no-appoint-title'>No Appointment Today</h2>
-                <a href="{{ redirectDashboard('create-appointment') }}" class='primary-btn'>Create New
-                    Appointment</a>
+                <h2 class='no-appoint-title'>No hay citas hoy</h2>
+                <a href="{{ redirectDashboard('create-appointment') }}" class='primary-btn'>Crear una nueva cita</a>
             </div>
         </td>
     </tr>

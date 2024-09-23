@@ -62,7 +62,7 @@
                             <li class="dropdown language-dropdown">
                                 <button class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-expanded="false">
-                                    {{ session()->has('locale') ? session()->get('locale') : 'En' }}
+                                    {{ session()->has('locale') ? session()->get('locale') : 'Es' }}
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @foreach (allLanguages() as $lang)
@@ -96,6 +96,8 @@
                         @else
                             <a class="header-btn" href="{{ route('signin') }}">{{ __('main.Login') }}</a>
                         @endif
+                        &nbsp;
+                        <a class="header-btn" href="https://chatgeminipi6.onrender.com/" target="_blank">Chat con Emeth</a>
                     </div>
                 </nav>
             </div>

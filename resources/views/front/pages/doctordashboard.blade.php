@@ -26,7 +26,7 @@
                                         <a class="nav-link {{ isset($tab) && $tab == 'dashboard' ? 'active' : '' }}"
                                             id="tabone-tab" data-toggle="tab" href="#tabone" role="tab"
                                             aria-controls="tabone" aria-selected="true">
-                                            <i class="fas fa-home"></i> <span>{{ __('Dashboard') }}</span>
+                                            <i class="fas fa-home"></i> <span>Inicio</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -34,7 +34,7 @@
                                             id="tabeight-tab" data-toggle="tab" href="#tabeight" role="tab"
                                             aria-controls="tabtwo" aria-selected="false">
                                             <i class="fas fa-calendar-check"></i> <span>
-                                                {{ __('Today Appointments') }}</span>
+                                                Citas de hoy</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -42,27 +42,27 @@
                                             id="tabtwo-tab" data-toggle="tab" href="#tabtwo" role="tab"
                                             aria-controls="tabtwo" aria-selected="false">
                                             <i class="fas fa-calendar-check"></i> <span>
-                                                {{ __('All Appointments') }}</span>
+                                                Todas las citas</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link {{ isset($tab) && $tab == 'profile' ? 'active' : '' }}"
                                             id="tabfour-tab" data-toggle="tab" href="#tabfour" role="tab"
                                             aria-controls="tabfour" aria-selected="false">
-                                            <i class="fas fa-user"></i><span>{{ __('profile') }}</span>
+                                            <i class="fas fa-user"></i><span>Perfil</span>
                                         </a>
                                     </li>
                                     @if (Auth::check() && Auth::user()->role == 'doctor')
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" id="tabfive-tab" data-toggle="tab" href="#tabfive"
                                                 role="tab" aria-controls="tabfive" aria-selected="false">
-                                                <i class="fas fa-address-book"></i><span>{{ __('Add Stuff') }}</span>
+                                                <i class="fas fa-address-book"></i><span>Agregar Asistente</span>
                                             </a>
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" id="tabseven-tab" data-toggle="tab" href="#tabseven"
                                                 role="tab" aria-controls="tabseven" aria-selected="false">
-                                                <i class="fas fa-address-book"></i><span>{{ __('Manage Stuff') }}</span>
+                                                <i class="fas fa-address-book"></i><span>Administrar Asistente</span>
                                             </a>
                                         </li>
                                     @endif
@@ -71,7 +71,7 @@
                                             <a class="nav-link" id="tabsix-tab" data-toggle="tab" href="#tabsix"
                                                 role="tab" aria-controls="tabsix" aria-selected="false">
                                                 <i
-                                                    class="fas fa-address-book"></i><span>{{ __('Create Appointment') }}</span>
+                                                    class="fas fa-address-book"></i><span>Crear Cita</span>
                                             </a>
                                         </li>
                                     @endif
@@ -138,7 +138,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-4.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Total Patient') }}</h4>
+                                                <h4 class="counter-title mt-0">Total Pacientes</h4>
                                                 <h2 class="counter">{{ $totalpatient }}</h2>
                                             </div>
                                         </div>
@@ -150,7 +150,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-13.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Pending Patient') }}</h4>
+                                                <h4 class="counter-title mt-0">Pacientes Pendientes</h4>
                                                 <h2 class="counter color-three">{{ $pendingAppointment }}</h2>
                                             </div>
                                         </div>
@@ -162,7 +162,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-7.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Total Earnings') }}</h4>
+                                                <h4 class="counter-title mt-0">Total Ganancias</h4>
                                                 @if (auth()->user()->role == 'doctor')
                                                     <h2 class="counter color-four">
                                                         {{ fetchOnlineEarningByDoctor(auth()->user()->doctor->id) }}
@@ -181,7 +181,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-12.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Patient') }}
+                                                <h4 class="counter-title mt-0">Paciente
                                                     ({{ now()->format('F') }})</h4>
                                                 <h2 class="counter">{{ $totalpatientmonth }}</h2>
                                             </div>
@@ -194,7 +194,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-11.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Earnings') }}
+                                                <h4 class="counter-title mt-0">Ganancias
                                                     ({{ now()->format('F') }})</h4>
                                                 @if (auth()->user()->role == 'doctor')
                                                     <h2 class="counter color-four">{{ $totalearningmonth }}</h2>
@@ -230,7 +230,7 @@
                                             <img src="{{ asset('front/assets/images/box-image-9.png') }}"
                                                 class="box-image mr-4" alt="{{ __('box image') }}" />
                                             <div class="media-body">
-                                                <h4 class="counter-title mt-0">{{ __('Total Pay Out') }} </h4>
+                                                <h4 class="counter-title mt-0">Total Pagado </h4>
                                                 <h2 class="counter color-four">
                                                     @if (auth()->user()->role == 'doctor')
                                                         {{ admintopay(auth()->user()->doctor->id) }}
@@ -249,7 +249,7 @@
                                                 <img src="{{ asset('front/assets/images/box-image-8.png') }}"
                                                     class="box-image mr-4" alt="{{ __('box image') }}" />
                                                 <div class="media-body">
-                                                    <h4 class="counter-title mt-0">{{ __('Financial Report') }}
+                                                    <h4 class="counter-title mt-0">Reporte Financiero
                                                     </h4>
                                                 </div>
                                             </div>
@@ -259,19 +259,19 @@
                             </div>
                         </div>
                         <div class="section-heading-area section-heading-area-dashboard">
-                            <h2 class="section-title">{{ __('Appointment Requests') }}</h2>
+                            <h2 class="section-title">Socilitudes de citas</h2>
                         </div>
                         <div class="primary-table">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">{{ __('Patient Name') }}</th>
-                                            <th scope="col">{{ __('Date') }}</th>
-                                            <th scope="col">{{ __('Time') }}</th>
-                                            <th scope="col">{{ __('Type') }}</th>
-                                            <th scope="col">{{ __('Status') }}</th>
-                                            <th scope="col">{{ __('Action') }}</th>
+                                            <th scope="col">Pacientes</th>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Hora</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="dashboardpagi" class="accordion">
@@ -286,7 +286,7 @@
                         <div class="section-inner-header section-heading-area">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h2 class="section-title">{{ __('All Appointment') }}</h2>
+                                    <h2 class="section-title">Todas las Citas</h2>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="inner-header-right">
@@ -296,12 +296,12 @@
                                                     <div class="search-input">
                                                         <input type="text" class="form-control"
                                                             name="appoinmentsearch" id="appoinmentsearch"
-                                                            placeholder="{{ __('Search Your Appointment') }}" />
+                                                            placeholder="Buscar tu Cita" />
                                                         <button class="search-btn"><i class="fas fa-search"></i></button>
                                                     </div>
                                                     <div class="date-input">
                                                         <input type="text" class="form-control" name="appoinmentdate"
-                                                            id="appoinmentdate" placeholder="{{ __('Search Date') }}" />
+                                                            id="appoinmentdate" placeholder="Buscar Fecha" />
                                                         <span class="form-icon"><i class="far fa-calendar-alt"></i></span>
                                                     </div>
                                                 </div>
@@ -320,16 +320,16 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">{{ __('Patient Name') }}</th>
-                                                    <th scope="col">{{ __('Date') }}</th>
-                                                    <th scope="col">{{ __('Time') }}</th>
-                                                    <th scope="col">{{ __('Type') }}</th>
-                                                    <th scope="col">{{ __('Status') }}</th>
-                                                    <th scope="col">{{ __('Prescription') }}</th>
+                                                    <th scope="col">Paciente</th>
+                                                    <th scope="col">Fecha</th>
+                                                    <th scope="col">Hora</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Estado</th>
+                                                    <th scope="col">Indicaciones</th>
                                                     @if (Auth::user()->role == 'doctor')
-                                                        <th scope="col">{{ __('Meeting') }}</th>
+                                                        <th scope="col">Reunión</th>
                                                     @endif
-                                                    <th scope="col">{{ __('Action') }}</th>
+                                                    <th scope="col">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="searchbodytoday">
